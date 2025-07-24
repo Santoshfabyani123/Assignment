@@ -23,6 +23,8 @@ jobs:
       uses: bridgecrewio/checkov-action@v12
       with:
         directory: .
+        output_format: cli,sarif
+        output_file_path: console,results.sarif
       continue-on-error: false
 
     - name: 'Set up Terraform'
