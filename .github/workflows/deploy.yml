@@ -3,7 +3,7 @@ name: Terraform CI/CD
 on:
   workflow_dispatch:
 
-  jobs:
+jobs:
   terraform:
     name: 'Terraform Deploy'
     runs-on: ubuntu-latest
@@ -43,7 +43,5 @@ on:
       run: terraform plan -out=tfplan.binary
 
     - name: 'Terraform Apply'
-      if: github.ref == 'refs/heads/main'
-
-      if: github.event_name == 'workflow_dispatch'
+      if: github.ref == 'refs/heads/main' && github.event_name == 'workflow_dispatch'
       run: terraform apply -auto-approve tfplan.binary
