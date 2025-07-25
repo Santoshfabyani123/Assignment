@@ -1,0 +1,12 @@
+#.terraform directory
+**/.terraform/*
+
+#tf state files
+*.tsstate
+*.tsstate.*
+
+#lock info file
+.terraform.tfstate.lock.info
+
+#ignore hcl file
+.terraform.lock.hcl
